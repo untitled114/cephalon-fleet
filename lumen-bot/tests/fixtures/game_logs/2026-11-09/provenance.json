@@ -1,0 +1,27 @@
+{
+ "source": "production: Lumen's game-context log game_context_2026-11-09.jsonl and his journal from 19:00",
+ "sha256": {
+  "game_context_2026-11-09.jsonl": "78365a88599c3a69ae0ba264fe8270a4fcb3a286be242bc2a5874ded7629bdef",
+  "journal_2026-11-09T19-00.txt": "7e0774775dfccdb63fe32a1db74f9746678b2d56ed65461c39af657adfc1f717"
+ },
+ "games": {
+  "401909955": "MEM @ TOR",
+  "401909957": "DEN @ HOU"
+ },
+ "kept": "rows whose event, status, quarter, clock, score or any pick's value, result, minutes or fouls changed from the game's previous row",
+ "rows_kept": {
+  "401909955": 347,
+  "401909957": 346
+ },
+ "feed": {
+  "source": "production Lunara live feed, game 401909957, recorded read-only (2026-11-09 22:02 ET); every pick_update as received",
+  "recording_sha256": "ab3b62267c45f0def0a5b411ea7cbbf0f1f9dbb2521ab504343ef6da31c22a4b",
+  "files": [
+   "feed_401909957_pick_updates.jsonl",
+   "feed_401909957_game_updates.jsonl.gz",
+   "feed_scoreboard_update.json"
+  ],
+  "recording": "the night's feed recording, 22:02 to 01:30 ET"
+ },
+ "public_copy": "public copy: some fields of each pick are left out; the checksums are of the original"
+}

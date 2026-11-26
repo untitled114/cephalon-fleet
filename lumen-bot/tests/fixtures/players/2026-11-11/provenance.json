@@ -1,0 +1,20 @@
+{
+ "what": "Lunara's public API at the opening tip of WSH @ IND (Q1 11:16 per ESPN): the box score lists each side's whole active roster, every player at 0 or '--' minutes; and tonight's /picks/today",
+ "source": "read-only GETs, 2026-11-11",
+ "files": {
+  "boxscore_401909966_tip.json": {
+   "url": "production Lunara API /games/401909966/boxscore",
+   "status": 200,
+   "fetched": "2026-11-11T19:12:04-05:00",
+   "sha256": "0a18a2b06799ec70f2c5ff6e918b4f6e7226d1789d515fb0c7960c77af846a47"
+  },
+  "picks_today.json": {
+   "url": "production Lunara API /picks/today",
+   "status": 200,
+   "fetched": "2026-11-11T19:12:04-05:00",
+   "sha256": "a25e7c1388c60ea9828e625d68e4ebe64d5d2ad0848dead27987316fd78a3ae3",
+   "public_copy": "public copy: some fields of each pick are left out; the checksums are of the original"
+  }
+ },
+ "public_copy": "public copy: some fields of each pick are left out; the checksums are of the original"
+}

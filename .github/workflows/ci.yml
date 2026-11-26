@@ -1,0 +1,26 @@
+# The definition of "passing" is scripts/check.sh; this workflow only runs it, on a clean
+# checkout of exactly what was pushed.
+name: ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: "0.13.1"
+          checksum: "eadd9d27c134ab5ac1ffd4473b97a741407f3ea238288f03121fc4deddf90220"
+          enable-cache: false
+      - run: sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg rsync tzdata python3
+      - run: scripts/check.sh --stage all

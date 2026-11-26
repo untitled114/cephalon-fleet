@@ -1,0 +1,57 @@
+{
+ "what": "Lunara's public API as Lumen reads it for season averages: tonight's /picks/today, a /players search per case and one player's /players/{id}/stats, bodies saved byte for byte",
+ "source": "read-only GETs, 2026-11-10",
+ "cases": {
+  "search_Josh_Hart.json": "a pick's own name, found once (tonight's pick 645, REBOUNDS)",
+  "search_Jaren_Jackson.json": "one match that is not the name searched (Jaren Jackson Jr.)",
+  "search_Williams.json": "several matches across teams, none the name searched",
+  "search_Kevin_Porter.json": "no match",
+  "boxscore_401909960.json": "MIL @ NY mid-game box score: Josh Hart (tonight's REBOUNDS pick 645) is on no list, he isn't playing"
+ },
+ "files": {
+  "picks_today.json": {
+   "url": "production Lunara API /picks/today",
+   "status": 200,
+   "fetched": "2026-11-10T12:52:54-05:00",
+   "sha256": "4d4dd33a5cd88138d13c9a7e4ba7e2ac560a0625a34679372045b6064487fafe",
+   "public_copy": "public copy: some fields of each pick are left out; the checksums are of the original"
+  },
+  "search_Josh_Hart.json": {
+   "url": "production Lunara API /players?search=Josh+Hart",
+   "status": 200,
+   "fetched": "2026-11-10T12:52:54-05:00",
+   "sha256": "f555f09fa1127047ce55c9e3ac795f362fa0d188772c42ada36908d24f2c64b4"
+  },
+  "stats_3062679.json": {
+   "url": "production Lunara API /players/3062679/stats",
+   "status": 200,
+   "fetched": "2026-11-10T12:52:54-05:00",
+   "sha256": "96de664a495b45ea159a5d7bd232f20c980b8b40aa5614a5fcaf154c06e98786"
+  },
+  "search_Jaren_Jackson.json": {
+   "url": "production Lunara API /players?search=Jaren+Jackson",
+   "status": 200,
+   "fetched": "2026-11-10T12:52:55-05:00",
+   "sha256": "25b74e0235a187d8b971eafaa98df9f4527a4eefa018585d42dd2b5944710ad6"
+  },
+  "search_Williams.json": {
+   "url": "production Lunara API /players?search=Williams",
+   "status": 200,
+   "fetched": "2026-11-10T12:52:55-05:00",
+   "sha256": "36eb89c4aaece29e7ccd1b1b2941e8034f0f1153caeba5042366c60e7c8d33dc"
+  },
+  "search_Kevin_Porter.json": {
+   "url": "production Lunara API /players?search=Kevin+Porter",
+   "status": 200,
+   "fetched": "2026-11-10T12:52:55-05:00",
+   "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "boxscore_401909960.json": {
+   "url": "production Lunara API /games/401909960/boxscore",
+   "status": 200,
+   "fetched": "2026-11-10T20:10:22-05:00",
+   "sha256": "990d3c0ce8d11139d2c6f9996aa41bdc1defc2e864dda862eb41a55e67849df2"
+  }
+ },
+ "public_copy": "public copy: some fields of each pick are left out; the checksums are of the original"
+}

@@ -1,0 +1,15 @@
+{
+ "source": "production: Lumen's game-context log game_context_2026-11-10.jsonl (Lumen's own game log), read-only",
+ "fetched": "2026-11-10T21:52:44-05:00",
+ "source_sha256_at_fetch": "4b470fc41602accf7309c2fa22302818fe99b6a74f87eca62f0bf75771d71870",
+ "games": {
+  "401909960": "MIL @ NY"
+ },
+ "kept": "every row of game 401909960, verbatim, in log order",
+ "rows_kept": {
+  "401909960": 301
+ },
+ "last_status": "final",
+ "why": "Josh Hart (REBOUNDS 6.5, pick 645) did not play; Lumen warned 'blowout' for him at 20:46 ET",
+ "public_copy": "public copy: some fields of each pick are left out; the checksums are of the original"
+}

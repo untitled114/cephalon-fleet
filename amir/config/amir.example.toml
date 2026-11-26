@@ -1,0 +1,79 @@
+[discord]
+guild_id = 0
+voice_channel_id = 0
+news_channel_id = 0
+cycles_channel_id = 0
+voice_log_channel_id = 0
+notification_role_id = 0
+
+[publishing]
+enabled = false            # HARD RULE: owner flips this only after approving previews
+
+[voice]
+greetings_dir = "assets/greetings"
+ffmpeg_path = "ffmpeg"
+audio_filter = "loudnorm=I=-16:TP=-1.5:LRA=11"
+leave_grace_seconds = 60
+greeting_expiry_seconds = 30
+queue_capacity = 5
+rejoin_window_seconds = 120
+greet_on_rejoin = false
+announce_joins = true
+announce_leaves = true
+announce_moves = true
+connect_timeout_seconds = 15
+reconnect_max_attempts = 5
+exclude_channel_ids = []   # voice channels Amir never chooses (still logged)
+follow_settle_seconds = 30
+
+[news]
+exclude_title_keywords = ["baro ki'teer", "soundtrack", "single release", "tennogen", "battlekit", "bundle", "merch", "plush"]
+role_ping_categories = []
+
+[[news.sources]]
+id = "forum-pc-updates"
+kind = "forum_rss"
+label = "Official forums · PC Update Notes"
+url = "https://forums.warframe.com/forum/3-pc-update-notes.xml/"
+interval_seconds = 300
+enabled = true
+
+[[news.sources]]
+id = "steam-announcements"
+kind = "steam_news"
+label = "Official Steam announcements"
+url = "https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=230410&count=20&maxlength=300&feeds=steam_community_announcements"
+interval_seconds = 900
+enabled = true
+
+[worldstate]
+official_url = "https://api.warframe.com/cdn/worldState.php"
+wfcd_url = "https://api.warframestat.us/pc"
+items_url = "https://api.warframestat.us/items/?only=uniqueName,name"
+interval_seconds = 300
+flip_refresh_delay_seconds = 5
+items_refresh_hours = 24
+
+[cycles]
+worlds = ["cetus", "vallis", "cambion"]
+# seconds per phase; warm=400 verified live 2026-10-25, night=3000 from capture
+durations = { day = 6000, night = 3000, warm = 400, cold = 1200, fass = 6000, vome = 3000 }
+
+[baro]
+warn_before_arrival_hours = 72
+warn_before_departure_hours = 10
+
+[http]
+connect_timeout_seconds = 10
+read_timeout_seconds = 30
+max_retries = 3
+max_response_bytes = 5000000
+user_agent = "AmirBeckett/0.1 (+Discord bot)"
+
+[storage]
+db_path = "data/amir.sqlite3"
+
+[logging]
+level = "INFO"
+heartbeat_path = "data/heartbeat"
+voice_debug = false       # discord.py voice-connection steps at DEBUG (no member data), to diagnose voice connects

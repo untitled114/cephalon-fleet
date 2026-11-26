@@ -1,0 +1,21 @@
+{
+ "what": "Lunara's re-check of a settled pick: the one correction it sent after a tracker fix, and the slate's /picks/today the night before",
+ "feed.jsonl": {
+  "source": "production Lunara live feed, scoreboard and game 401909953, recorded read-only on 2026-11-10 from 11:29:34 ET",
+  "lines": {
+   "527": "b92e5592f61dc8252536ab4dea2d469f4f86cdbccd71f93383da82bb960ba61a",
+   "528": "7fcf0148897f9e5534d6841a7e1cba780d03ad59d2078282f1e038f3a71129d6"
+  },
+  "note": "lines copied byte for byte; they are the only correction messages in the recording (scoreboard pick_correction, then the game socket's pick_update)"
+ },
+ "picks_today.jsonl": {
+  "source": "production Lunara API /picks/today, polled read-only on 2026-11-09",
+  "recording_sha256": "fc808d437682d28b066ebde00a8893f74d148747cef1e32a2e4d2754db9f9f95",
+  "lines": {
+   "1": "052ea0ef1d982d58317918c003d1864f2c2345599f055d21f91faa7861b665b1"
+  },
+  "note": "first poll of the recording, 22:02:58 ET: Sion James (id 5) already settled at 3.0, MISS",
+  "public_copy": "public copy: some fields of each pick are left out; the checksums are of the original"
+ },
+ "public_copy": "public copy: some fields of each pick are left out; the checksums are of the original"
+}

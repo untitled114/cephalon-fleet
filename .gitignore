@@ -1,0 +1,13 @@
+# Environments the check script builds
+.ci/
+.venv/
+__pycache__/
+*.pyc
+.coverage
+.pytest_cache/
+
+# Local settings and runtime state
+.env
+.env.local
+amir/data/
+lumen-bot/logs/

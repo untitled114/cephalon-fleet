@@ -1,0 +1,44 @@
+# Amir Beckett runs as a container. scripts/deploy.sh syncs this repo to the server and runs
+# `docker compose build`, then `docker compose up -d --force-recreate` there, so even a
+# config-only change gets a new container (config/amir.toml is a single-file bind mount). See
+# README.md, "Deployment".
+#
+# The bot token lives only in the server's .env next to this file, as its DISCORD_TOKEN line. The
+# deploy never copies, overwrites or deletes that file. config/amir.toml holds everything else.
+services:
+  amir:
+    build: .
+    # A fixed name, so a deploy can keep the previous build as amir-beckett:previous (rollback).
+    image: amir-beckett:latest
+    env_file: .env
+    restart: unless-stopped
+    init: true
+    # Shutdown takes at most about 10 s to leave voice, then closes the gateway.
+    stop_grace_period: 20s
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - amir-data:/data
+      - ./config/amir.toml:/app/config/amir.toml:ro
+      - ./assets/greetings:/app/assets/greetings:ro
+    # Healthy = the process is up and its Discord client is ready. The heartbeat starts after
+    # Discord's READY, hence the start period. Docker only reports "unhealthy"; it does not
+    # restart the container for it (restart covers crashes and reboots).
+    healthcheck:
+      test: ["CMD", "python", "-m", "amir.health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 60s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  amir-data:

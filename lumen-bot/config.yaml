@@ -1,0 +1,12 @@
+# Discord: the token comes from the DISCORD_TOKEN env var and the owner's id from LUMEN_OWNER_ID
+# (never committed); Lumen will not start without either.
+discord: {}
+
+lunara:
+  api_url: "http://127.0.0.1:8010"
+  ws_url: "ws://127.0.0.1:8010/ws"
+
+alerts:
+  approaching_line: true      # Alert when actual_value is within threshold of line
+  approach_threshold: 2.0     # Points/rebounds within line to trigger approaching alert
+  hit_miss: true              # Alert on final is_hit determination

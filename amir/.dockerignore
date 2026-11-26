@@ -1,0 +1,14 @@
+# The image copies only the venv, the greeting clips and the example config (see Dockerfile).
+# Everything below stays out of the build context: secrets, state, the owner's real config.
+.env*
+!.env.example
+data/
+.venv/
+.git
+docs/
+tests/
+config/amir.toml
+**/__pycache__
+.coverage
+.pytest_cache/
+.ruff_cache/
